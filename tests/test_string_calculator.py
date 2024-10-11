@@ -24,3 +24,8 @@ class TestStringCalculator(unittest.TestCase):
     def test_multiple_comma_separated_numbers(self):
         self.assertEqual(self.calculator.add("1,2,3"), 6)
         self.assertEqual(self.calculator.add("5,7,8,2"), 22)
+
+    # Step 5: Newline between numbers
+    def test_newline_between_numbers(self):
+        self.assertEqual(self.calculator.add("1\n2,3"), 6)
+        self.assertEqual(self.calculator.add("4\n5\n6"), 15)
