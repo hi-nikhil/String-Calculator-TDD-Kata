@@ -29,3 +29,8 @@ class TestStringCalculator(unittest.TestCase):
     def test_newline_between_numbers(self):
         self.assertEqual(self.calculator.add("1\n2,3"), 6)
         self.assertEqual(self.calculator.add("4\n5\n6"), 15)
+
+    # Step 6: Custom delimiters
+    def test_custom_delimiters(self):
+        self.assertEqual(self.calculator.add("//;\n1;2"), 3)
+        self.assertEqual(self.calculator.add("//|\n2|3|4"), 9)
