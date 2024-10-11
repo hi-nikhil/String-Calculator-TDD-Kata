@@ -19,3 +19,8 @@ class TestStringCalculator(unittest.TestCase):
     def test_two_numbers_comma_separated(self):
         self.assertEqual(self.calculator.add("1,2"), 3)
         self.assertEqual(self.calculator.add("4,5"), 9)
+
+    # Step 4: Multiple comma-separated numbers
+    def test_multiple_comma_separated_numbers(self):
+        self.assertEqual(self.calculator.add("1,2,3"), 6)
+        self.assertEqual(self.calculator.add("5,7,8,2"), 22)
