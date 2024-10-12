@@ -49,3 +49,8 @@ class TestStringCalculator(unittest.TestCase):
     def test_ignore_numbers_greater_than_1000000(self):
         self.assertEqual(self.calculator.add("2,1000001,6"), 8)
         self.assertEqual(self.calculator.add("1000,999,1000010"), 1999)
+
+    # Step 9: Ignore white space around numbers
+    def test_whitespace_handling(self):
+        self.assertEqual(self.calculator.add(" 1 , 2 "), 3)
+        self.assertEqual(self.calculator.add(" 3\n4 "), 7)
