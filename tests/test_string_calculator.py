@@ -54,3 +54,8 @@ class TestStringCalculator(unittest.TestCase):
     def test_whitespace_handling(self):
         self.assertEqual(self.calculator.add(" 1 , 2 "), 3)
         self.assertEqual(self.calculator.add(" 3\n4 "), 7)
+
+#    Step 10: Return 0 for input with only delimiters
+    def test_only_delimiters(self):
+        self.assertEqual(self.calculator.add(",\n"), 0)
+        self.assertEqual(self.calculator.add(",,,\n"), 0)

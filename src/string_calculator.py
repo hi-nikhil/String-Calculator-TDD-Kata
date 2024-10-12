@@ -10,7 +10,9 @@ class StringCalculator:
 
         numbers = numbers.replace("\n", delimiter)
 
-        nums = list(map(int, [num.strip() for num in numbers.split(delimiter)]))
+        nums = [num.strip() for num in numbers.split(delimiter) if num.strip()]
+
+        nums = list(map(int, nums))
 
         nums = [n for n in nums if n <= 1000000]
 
