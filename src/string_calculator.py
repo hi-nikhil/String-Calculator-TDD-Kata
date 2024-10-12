@@ -11,6 +11,8 @@ class StringCalculator:
         numbers = numbers.replace("\n", delimiter)
         nums = list(map(int, numbers.split(delimiter)))
 
+        nums = [n for n in nums if n <= 1000000]
+
         negatives = [n for n in nums if n < 0]
         if negatives:
             raise ValueError(f"negative numbers not allowed: {','.join(map(str, negatives))}")

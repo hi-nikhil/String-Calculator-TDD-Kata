@@ -44,3 +44,8 @@ class TestStringCalculator(unittest.TestCase):
         with self.assertRaises(ValueError) as context:
             self.calculator.add("1,-2,-3")
         self.assertEqual(str(context.exception), "negative numbers not allowed: -2,-3")
+
+    # Step 8: Ignore numbers grater than 1000000
+    def test_ignore_numbers_greater_than_1000000(self):
+        self.assertEqual(self.calculator.add("2,1000001,6"), 8)
+        self.assertEqual(self.calculator.add("1000,999,1000010"), 1999)
